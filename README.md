@@ -23,4 +23,4 @@ https://better-github-skills.deno.dev/api/josvaal?techs=js,svelte,spring,go
 
 ### Example Github Readme Card
 
-![](/static/screenshots/example.png)
+![](https://better-github-skills.deno.dev/api/josvaal?techs=js,svelte,spring,go)
