@@ -1,12 +1,10 @@
 import { FreshContext } from "$fresh/server.ts";
-import { java, js, spring, ts } from "../../icons/icons.tsx";
+import * as icons from "../../icons/icons.tsx";
 
-const icons: Record<string, (x: string, y: string) => string> = {
-  js,
-  java,
-  spring,
-  ts,
-};
+const iconsRecord: Record<string, (x: string, y: string) => string> = Object
+  .fromEntries(
+    Object.entries(icons).filter(([_, fn]) => typeof fn === "function"),
+  );
 
 export const handler = async (
   _req: Request,
@@ -40,7 +38,7 @@ export const handler = async (
   const htmlContent = `
 <svg width="400" height="210" xmlns="http://www.w3.org/2000/svg">
  <g>
-  <title>Layer 1</title>
+  <title>${jsonData.login} Skills Card</title>
   <rect fill="#fff" stroke="#000" x="377.16666" y="269.16667" width="1" height="0" id="svg_2"/>
   <rect fill="#fff" stroke="#000" x="49.16666" y="9.16667" width="5" height="0" id="svg_3"/>
   <rect rx="19" id="svg_1" height="210" width="400" y="0" x="-0.10999" stroke="#3d444d" fill="#151b23"/>
@@ -62,10 +60,10 @@ export const handler = async (
    </svg>
   </g>
   <g id="svg_60">
-  ${icons[techs[0]]("42", "121")}       // Primer ícono
-  ${icons[techs[1]]("126", "121")}      // Segundo ícono
-  ${icons[techs[2]]("210", "121")}      // Tercer ícono
-  ${icons[techs[3]]("294", "121")}      // Cuarto ícono
+  ${iconsRecord[techs[0]]?.("42", "121") || ""}
+  ${iconsRecord[techs[1]]?.("126", "121") || ""}
+  ${iconsRecord[techs[2]]?.("210", "121") || ""}
+  ${iconsRecord[techs[3]]?.("294", "121") || ""}
   </g>
  </g>
  <defs>
