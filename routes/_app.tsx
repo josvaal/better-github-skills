@@ -6,7 +6,7 @@ export default function App({ Component }: PageProps) {
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
-        <title>Better Discord Skills</title>
+        <title>Better Github Skills</title>
         <link rel="stylesheet" href="/styles.css" />
       </head>
       <body>
