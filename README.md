@@ -1,16 +1,26 @@
-# Fresh project
+# Better GitHub Skills
 
-Your new Fresh project is ready to go. You can follow the Fresh "Getting
-Started" guide here: https://fresh.deno.dev/docs/getting-started
+Showcase your concise GitHub skills on a minimalist card
 
 ### Usage
 
-Make sure to install Deno: https://deno.land/manual/getting_started/installation
-
-Then start the project:
+To use it you must consume the api in this way:
 
 ```
-deno task start
+https://better-github-skills.deno.dev/api/{username}?techs={tech1},{tech2},{tech3},{tech4}
 ```
 
-This will watch the project directory and restart as necessary.
+where:
+
+- `{username}` is the username of the user you want to show
+- `{tech1},{tech2},{tech3},{tech4}` are the techs you want to show
+
+### Example Fetch Request
+
+```
+https://better-github-skills.deno.dev/api/josvaal?techs=js,svelte,spring,go
+```
+
+### Example Github Readme Card
+
+![](/static/screenshots/example.png)
