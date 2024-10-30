@@ -1,24 +1,31 @@
-import { useSignal } from "@preact/signals";
-import Counter from "../islands/Counter.tsx";
+import Card from "../islands/Card.tsx";
 
 export default function Home() {
-  const count = useSignal(3);
   return (
-    <div class="px-4 py-8 mx-auto bg-[#86efac]">
+    <div class="px-4 py-8 mx-auto bg-[#0D1117] text-white min-h-screen">
       <div class="max-w-screen-md mx-auto flex flex-col items-center justify-center">
         <img
           class="my-6"
-          src="/logo.svg"
+          src="/github.svg"
           width="128"
           height="128"
           alt="the Fresh logo: a sliced lemon dripping with juice"
         />
-        <h1 class="text-4xl font-bold">Welcome to Fresh</h1>
+        <h1 class="text-4xl font-bold">Better GitHub Skills</h1>
         <p class="my-4">
-          Try updating this message in the
-          <code class="mx-2">./routes/index.tsx</code> file, and refresh.
+          Showcase your concise GitHub skills on a minimalist card
         </p>
-        <Counter count={count} />
+        <div class="my-4 hover:-translate-y-1 transition-transform">
+          <Card />
+        </div>
+        <h1 class="text-xl my-4">Example:</h1>
+        <div class="my-2 mb-4">
+          <img
+            src="/screenshots/example.png"
+            alt="example screenshot"
+            class="shadow-2xl rounded-xl border-2 border-white"
+          />
+        </div>
       </div>
     </div>
   );
